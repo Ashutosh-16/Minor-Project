@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1 >Predict Pump Status
+	<style>{text-align: centre}</style>
+	</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	
+    	<input type="text" name="0" placeholder="Coffee" required="required" />
+    	<input type="text" name="1" placeholder="Garden Flower" required="required" />
+    	<input type="text" name="2" placeholder="GroundNut" required="required" />
+    	<input type="text" name="3" placeholder="Maize" required="required" />
+    	<input type="text" name="4" placeholder="Paddy" required="required" />
+    	<input type="text" name="5" placeholder="Potato" required="required" />
+    	<input type="text" name="6" placeholder="Pulse" required="required" />
+    	<input type="text" name="7" placeholder="SugarCane" required="required" />
+    	<input type="text" name="8" placeholder="Wheat" required="required" />
+    	<input type="text" name="10" placeholder="Crop days" required="required" />
+    	<input type="text" name="9" placeholder="Soil Moisture" required="required" />
+    	
+        <input type="text" name="11" placeholder="Temperature" required="required" />
+        <input type="text" name="12" placeholder="Humidity" required="required" />
+        
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
